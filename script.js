@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
       .then(response => response.json())
       .then(data => {
         artists = data;
-        console.log('Fetched artist data:', artists); // Log fetched data to verify
       })
       .catch(error => console.error('Error fetching artist data:', error));
   
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         artistInfo.textContent = 'Artist not found.'; // Artist not found message
       }
-      console.log('User searched for:', input);
     }
   
     // Search Button Click Event 

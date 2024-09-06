@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Search Button Click Event - Logs search input for now
     document.getElementById('searchButton').addEventListener('click', () => {
       const input = document.getElementById('artistInput').value;
+      const artist = artists.find(artist => artist.name === input);
+      const artistInfo = document.getElementById('artistInfo');
       console.log('User searched for:', input);
     });
   });

@@ -51,14 +51,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Dark mode toggle listener
   document.getElementById('darkModeToggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-
-      // Add ouseover for Dark Mode Toggle Button
-    darkModeToggle.addEventListener('mouseover', () => {
-        darkModeToggle.style.backgroundColor = 'gray'; // Change background color when hovered
-      });
-  
-      // Reset the background color when the mouse leaves the button
-    darkModeToggle.addEventListener('mouseout', () => {
-        darkModeToggle.style.backgroundColor = ''; // Reset to original background
-      });
-  });

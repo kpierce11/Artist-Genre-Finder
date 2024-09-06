@@ -52,3 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('darkModeToggle').addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
   });
+
+  // Create dropdown list to show matching artists
+  const dropdown = document.createElement('ul');
+  dropdown.id = 'dropdown';
+  document.querySelector('.container').appendChild(dropdown);

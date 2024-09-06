@@ -3,13 +3,8 @@ body {
     padding: 20px;
 }
 
-.container {
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* Dropdown list */
 #dropdown {
+    display: none; /* Hide the dropdown initially */
     position: absolute;
     border: 1px solid #ccc;
     max-height: 150px;
@@ -18,8 +13,15 @@ body {
     width: 100%;
     list-style-type: none;
     padding: 0;
-    margin-top: 0;
-    z-index: 1000; /* Ensure it shows above other content */
+    margin-top: 5px;
+    z-index: 1000;
+}
+
+/* Add a container style with relative positioning */
+.container {
+    position: relative; /* This makes the dropdown position relative to the container */
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* Dropdown list items */
@@ -44,6 +46,23 @@ body {
 .dark-mode {
     background-color: #000;
     color: white;
+}
+
+/* Style for the dark mode toggle button */
+#darkModeToggle {
+    position: fixed;
+    top: 10px;  /* Adjust top positioning */
+    right: 10px; /* Adjust right positioning */
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Button background color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+#darkModeToggle:hover {
+    background-color: #e0e0e0; /* Button hover effect */
 }
 
 /* Dark mode for dropdown */

@@ -53,42 +53,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // Create dropdown list to show matching artists
     const dropdown = document.createElement('ul');
     dropdown.id = 'dropdown';
-    document.querySelector('.container').appendChild(dropdown);
+    document.getElementById('artistInput').parentNode.appendChild(dropdown);
+       // Event listener for input field to show matching artist suggestions
+       document.getElementById('artistInput').addEventListener('input', () => {
+        const input = document.getElementById('artistInput').value.toLowerCase();
+        dropdown.innerHTML = ''; // Clear previous dropdown results
 
-    // Event listener for input field to show matching artist suggestions
-    document.getElementById('artistInput').addEventListener('input', () => {
-      const input = document.getElementById('artistInput').value.toLowerCase();
-      dropdown.innerHTML = ''; // Clear previous dropdown results
-
-      // Filter artists that match the input
-      const matchingArtists = artists.filter(artist => artist.name.toLowerCase().startsWith(input));
-
-      // If there are matching artists, display them in the dropdown
-      if (matchingArtists.length > 0) {
-        dropdown.style.display = 'block'; // Show dropdown when there are matches
-        matchingArtists.forEach(artist => {
-          const listItem = document.createElement('li');
-          listItem.textContent = artist.name;
-
-          // Add event listener to fill input when clicking on a dropdown item
-          listItem.addEventListener('click', () => {
-            document.getElementById('artistInput').value = artist.name; // Fill input with artist name
-            dropdown.innerHTML = ''; // Clear dropdown after selection
-            dropdown.style.display = 'none'; // Hide dropdown after selection
+          // If the input is empty, hide the dropdown
+      if (input === '') {
+        dropdown.style.display = 'none'; // Hide the dropdown if input is cleared
+        return;
+      }
+  
+        // Filter artists that match the input
+        const matchingArtists = artists.filter(artist => artist.name.toLowerCase().startsWith(input));
+  
+        if (matchingArtists.length > 0) {
+          dropdown.style.display = 'block'; // Show dropdown when there are matches
+          matchingArtists.forEach(artist => {
+            const listItem = document.createElement('li');
+            listItem.textContent = artist.name;
+  
+            // Add event listener to fill input when clicking on a dropdown item
+            listItem.addEventListener('click', () => {
+              document.getElementById('artistInput').value = artist.name; // Fill input with artist name
+              dropdown.innerHTML = ''; // Clear dropdown after selection
+              dropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+  
+            dropdown.appendChild(listItem);
           });
-
-          dropdown.appendChild(listItem);
-        });
-      } else {
-        dropdown.style.display = 'none'; // Hide dropdown if there are no matches
-      }
-    });
-
-    // Hide dropdown if clicking outside
-    document.addEventListener('click', (event) => {
-      if (!document.getElementById('artistInput').contains(event.target)) {
-        dropdown.innerHTML = ''; // Clear dropdown when clicking outside
-        dropdown.style.display = 'none'; // Hide dropdown
-      }
-    });
-});
+        } else {
+          dropdown.style.display = 'none'; // Hide dropdown when no matches
+        }
+      });
+  
+      // Hide dropdown if clicking outside
+      document.addEventListener('click', (event) => {
+        if (!document.getElementById('artistInput').contains(event.target)) {
+          dropdown.innerHTML = ''; // Clear dropdown when clicking outside
+          dropdown.style.display = 'none'; // Hide dropdown when clicking outside
+        }
+      });
+  });

@@ -12,10 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => console.error('Error fetching artist data:', error));
   
-    // Search Button Click Event - Logs search input for now
+    // Search Button Click Event 
     document.getElementById('searchButton').addEventListener('click', () => {
-      const input = document.getElementById('artistInput').value;
-      const artist = artists.find(artist => artist.name === input);
+      const input = document.getElementById('artistInput').value.toLowerCase();
+      const artist = artists.find(artist => artist.name.toLowerCase() === input);
       const artistInfo = document.getElementById('artistInfo');
       artistInfo.innerHTML = ''; // Clear any previous results
 
@@ -50,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log('Dark mode toggled');
     });
   
-    // Initial event listener for Enter key in the search input field (no functionality yet)
+    // Initial event listener for Enter key in the search input field 
     document.getElementById('artistInput').addEventListener('keyup', (event) => {
       if (event.key === 'Enter') {
-        console.log('Enter key pressed');
+        document.getElementById('searchButton').click();
       }
     });

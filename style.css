@@ -1,8 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
-    background-color: white; /* Ensure a default background color */
-    color: black; /* Ensure a default text color */
 }
 
 .container {
@@ -10,23 +8,50 @@ body {
     margin: 0 auto;
 }
 
-.dark-mode {
-    background-color: #000000;
-    color: white; 
+/* Dropdown list */
+#dropdown {
+    position: absolute;
+    border: 1px solid #ccc;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: #fff;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    z-index: 1000; /* Ensure it shows above other content */
 }
 
-/* Add the styles for the dark mode toggle button */
-#darkModeToggle {
-    position: absolute;
-    top: 10px; /* Adjust this value to control how far from the top */
-    right: 10px; /* Adjust this value to control how far from the right */
-    padding: 10px 20px;
-    background-color: #f0f0f0; /* Button background color */
-    border: none;
-    border-radius: 5px;
+/* Dropdown list items */
+#dropdown li {
+    padding: 10px;
     cursor: pointer;
-  }
-  
-#darkModeToggle:hover {
-    background-color: #e0e0e0; /* Button hover effect */
-  }
+}
+
+#dropdown li:hover {
+    background-color: #f0f0f0; /* Highlight dropdown item on hover */
+}
+
+/* Input styling */
+#artistInput {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #000;
+    color: white;
+}
+
+/* Dark mode for dropdown */
+.dark-mode #dropdown {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode #dropdown li:hover {
+    background-color: #555; /* Different hover color in dark mode */
+}

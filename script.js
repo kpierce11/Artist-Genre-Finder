@@ -1,12 +1,20 @@
 // Ensure the DOM is fully loaded before running any scripts
 document.addEventListener('DOMContentLoaded', () => {
+
+    // Fetch artist data from db.json
+    fetch('http://localhost:3000/artists')
+      .then(response => response.json())
+      .then(artists => {
+        console.log('Fetched artist data:', artists); // Log fetched data to verify
+      })
+      .catch(error => console.error('Error fetching artist data:', error));
   
-  // Search Button Click Event - Logs search input for now
-   document.getElementById('searchButton').addEventListener('click', () => {
-    const input = document.getElementById('artistInput').value;
-    console.log('User searched for:', input); // Logs what the user typed in the search field
+    // Search Button Click Event - Logs search input for now
+    document.getElementById('searchButton').addEventListener('click', () => {
+      const input = document.getElementById('artistInput').value;
+      console.log('User searched for:', input);
     });
-});
+  });
   
     // Initial event listener for dark mode toggle (no functionality yet)
     document.getElementById('darkModeToggle').addEventListener('click', () => {

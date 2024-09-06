@@ -1,0 +1,9 @@
+{
+    "artists": [
+      { "id": 1, "name": "Radiohead", "genre": "Alternative Rock", "hometown": "Oxford, England" },
+      { "id": 2, "name": "Linkin Park", "genre": "Nu-Metal", "hometown": "Agoura Hills, California" },
+      { "id": 3, "name": "Miles Davis", "genre": "Jazz", "hometown": "Alton, Illinois" },
+      { "id": 4, "name": "Metallica", "genre": "Heavy Metal", "hometown": "Los Angeles, California" },
+      { "id": 5, "name": "Kendrick Lamar", "genre": "Hip Hop", "hometown": "Compton, California" }
+    ]
+  }

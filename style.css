@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    background-color: white; /* Ensure a default background color */
+    color: black; /* Ensure a default text color */
 }
 
 .container {
@@ -8,11 +10,44 @@ body {
     margin: 0 auto;
 }
 
+/* Apply dark-mode styles with higher specificity */
+.dark-mode body,
 .dark-mode {
-    background-color: #000000;
-    color: white;
+    background-color: #000000 !important; /* Force dark background for body */
+    color: white !important; /* Force text color to be white */
 }
 
-#darkModeToggle:hover {
-    background-color: #e0e0e0; /* Button hover effect */
-  }
+/* Container in dark mode */
+.dark-mode .container {
+    background-color: #1a1a1a !important; /* Darker container background */
+    padding: 20px;
+}
+
+/* Dark mode button styling */
+button {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.dark-mode button {
+    background-color: #333333 !important; /* Dark background for button */
+    color: white !important; /* White text in dark mode */
+}
+
+/* Input styling */
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.dark-mode input {
+    background-color: #333333 !important; /* Dark input background */
+    color: white !important; /* White text in dark mode */
+    border: 1px solid #444;
+}

@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const input = document.getElementById('artistInput').value;
       const artist = artists.find(artist => artist.name === input);
       const artistInfo = document.getElementById('artistInfo');
+      artistInfo.innerHTML = ''; // Clear any previous results
       console.log('User searched for:', input);
     });
   });

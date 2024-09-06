@@ -1,10 +1,13 @@
 // Ensure the DOM is fully loaded before running any scripts
 document.addEventListener('DOMContentLoaded', () => {
 
+    let artists = [];
+
     // Fetch artist data from db.json
     fetch('http://localhost:3000/artists')
       .then(response => response.json())
-      .then(artists => {
+      .then(data => {
+        artists = data;
         console.log('Fetched artist data:', artists); // Log fetched data to verify
       })
       .catch(error => console.error('Error fetching artist data:', error));
@@ -28,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to display artist info
   function displaySingleArtist(artist) {
     const artistInfo = document.getElementById('artistInfo');
-    
+
     const artistName = document.createElement('h2');
     artistName.textContent = artist.name;
     artistInfo.appendChild(artistName);

@@ -37,9 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   
     // Search Button Click Event
-    document
-      .getElementById("searchButton")
-      .addEventListener("click", searchAndDisplayArtist);
+    document.getElementById("searchButton").addEventListener("click", searchAndDisplayArtist);
   
     // Enter Key Listener for the search input field
     document.getElementById("artistInput").addEventListener("keyup", (event) => {

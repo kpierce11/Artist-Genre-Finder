@@ -1,13 +1,22 @@
+/* Body with gradient for light mode */
 body {
     font-family: Arial, sans-serif;
     padding: 20px;
+    background: radial-gradient(circle, lightblue, blueviolet); /* Light mode gradient */
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* Dark mode with gradient */
+.dark-mode {
+    background: radial-gradient(circle, #333, #000); /* Dark mode gradient */
+    color: white;
+}
+
+/* Ensure dropdown position */
 #dropdown {
-    display: none; /* Hide the dropdown initially */
+    display: none;
     position: absolute;
-    top: 50%; /* Ensure dropdown is placed below the input */
+    top: 50%;
     left: 0;
     border: 1px solid #ccc;
     max-height: 150px;
@@ -16,26 +25,25 @@ body {
     width: 100%;
     list-style-type: none;
     padding: 0;
-    z-index: 10; /* Make sure it appears above other elements */
+    z-index: 10;
 }
 
-/* Wrapper to position dropdown relative to input */
+/* Dark mode for dropdown */
+.dark-mode #dropdown {
+    background-color: #333;
+    color: white;
+}
+
+.dark-mode #dropdown li:hover {
+    background-color: #555;
+}
+
+/* Position the artist input and wrapper */
 #artistInputWrapper {
-    position: relative; /* Ensure the dropdown stays relative to this wrapper */
+    position: relative;
     width: 100%;
 }
 
-/* Dropdown list items */
-#dropdown li {
-    padding: 10px;
-    cursor: pointer;
-}
-
-#dropdown li:hover {
-    background-color: #f0f0f0; /* Highlight dropdown item on hover */
-}
-
-/* Input styling */
 #artistInput {
     width: 100%;
     padding: 10px;
@@ -49,17 +57,11 @@ body {
     margin-top: 100px;
 }
 
-/* Dark mode styles */
-.dark-mode {
-    background-color: #000;
-    color: white;
-}
-
-/* Style for the dark mode toggle button */
+/* Dark mode toggle button - fixed position at top right */
 #darkModeToggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+    position: fixed; /* Fixed to the viewport */
+    top: 10px; /* Position from top */
+    right: 10px; /* Position from right */
     padding: 10px 20px;
     background-color: #f0f0f0;
     border: none;
@@ -70,15 +72,5 @@ body {
 }
 
 #darkModeToggle:hover {
-    background-color: #e0e0e0; /* Button hover effect */
-}
-
-/* Dark mode for dropdown */
-.dark-mode #dropdown {
-    background-color: #333;
-    color: white;
-}
-
-.dark-mode #dropdown li:hover {
-    background-color: #555;
+    background-color: #e0e0e0;
 }

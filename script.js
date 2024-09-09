@@ -79,7 +79,14 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.style.display = "none"; // Hide the dropdown if input is cleared
         return;
       }
-  
+
+
+        // Only show dropdown when 2 or more characters are typed
+        if (input.length < 2) {
+            dropdown.style.display = "none";
+            return;
+        }
+
       // Filter artists that match the input
       const matchingArtists = artists.filter((artist) =>
         artist.name.toLowerCase().startsWith(input),

@@ -6,6 +6,23 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
+/* Keyframes to slide in the title (h1) */
+@keyframes slideInTitle {
+    0% {
+        transform: translateY(-30px); /* Start from above */
+        opacity: 0; /* Invisible */
+    }
+    100% {
+        transform: translateY(0); /* End at normal position */
+        opacity: 1; /* Fully visible */
+    }
+}
+
+/* Apply the animation only to the h1 element */
+h1 {
+    animation: slideInTitle 1s ease-out; /* Apply animation to the title */
+}
+
 /* Dark mode with gradient */
 .dark-mode {
     background: radial-gradient(circle, #333, #000); /* Dark mode gradient */

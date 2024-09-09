@@ -7,7 +7,7 @@ body {
 #dropdown {
     display: none; /* Hide the dropdown initially */
     position: absolute;
-    top: 100%;
+    top: 50%; /* Ensure dropdown is placed below the input */
     left: 0;
     border: 1px solid #ccc;
     max-height: 150px;
@@ -16,14 +16,12 @@ body {
     width: 100%;
     list-style-type: none;
     padding: 0;
-    margin-top: 5px;
-    z-index: 1000;
-    transition: background-color 0.5s ease, color 0.5s ease
+    z-index: 10; /* Make sure it appears above other elements */
 }
 
-/* Add relative positioning to the input wrapper to position dropdown correctly */
+/* Wrapper to position dropdown relative to input */
 #artistInputWrapper {
-    position: relative;
+    position: relative; /* Ensure the dropdown stays relative to this wrapper */
     width: 100%;
 }
 
@@ -43,7 +41,12 @@ body {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    transition: background-color 0.5s ease, color 0.5s ease
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+#artistInfo {
+    font-size: 18px;
+    margin-top: 100px;
 }
 
 /* Dark mode styles */
@@ -55,15 +58,15 @@ body {
 /* Style for the dark mode toggle button */
 #darkModeToggle {
     position: fixed;
-    top: 10px;  /* Adjust top positioning */
-    right: 10px; /* Adjust right positioning */
+    top: 10px;
+    right: 10px;
     padding: 10px 20px;
-    background-color: #f0f0f0; /* Button background color */
+    background-color: #f0f0f0;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     z-index: 1000; /* Ensure it stays on top */
-    transition: background-color 0.5s ease, color 0.5s ease
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #darkModeToggle:hover {
@@ -77,5 +80,5 @@ body {
 }
 
 .dark-mode #dropdown li:hover {
-    background-color: #555; /* Different hover color in dark mode */
+    background-color: #555;
 }

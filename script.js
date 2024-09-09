@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Function to search for the artist and display their info
     function searchAndDisplayArtist() {
-      const input = document.getElementById("artistInput").value.toLowerCase();
+      const input = document.getElementById("artistInput").value.trim().toLowerCase();
       const artist = artists.find(
         (artist) => artist.name.toLowerCase() === input,
       );
@@ -68,9 +68,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const dropdown = document.createElement("ul");
     dropdown.id = "dropdown";
     document.getElementById("artistInput").parentNode.appendChild(dropdown);
+
     // Event listener for input field to show matching artist suggestions
     document.getElementById("artistInput").addEventListener("input", () => {
-      const input = document.getElementById("artistInput").value.toLowerCase();
+      const input = document.getElementById("artistInput").value.trim().toLowerCase();
       dropdown.innerHTML = ""; // Clear previous dropdown results
   
       // If the input is empty, hide the dropdown

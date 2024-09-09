@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
       );
       const artistInfo = document.getElementById("artistInfo");
       artistInfo.innerHTML = ""; // Clear any previous results
+
+      // Validate input: check for empty input
+      if (input === "") {
+        artistInfo.textContent = "Please enter an artist name.";
+        return; // Exit the function if input is empty
+      }
   
       if (artist) {
         // Display artist info directly within this function

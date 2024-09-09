@@ -1,6 +1,6 @@
 /* Body with gradient for light mode */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     padding: 20px;
     background: radial-gradient(circle, lightblue, blueviolet); /* Light mode gradient */
     transition: background-color 0.5s ease, color 0.5s ease;

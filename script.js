@@ -23,7 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
         artistInfo.textContent = "Please enter an artist name.";
         return; // Exit the function if input is empty
       }
-  
+
+      //Check for minimum input length
+      if (input.length < 2) {
+        artistInfo.textContent = 'Please enter at least 2 characters.'; 
+        return; // Exit the function if input is too short
+      }
+
+      // Validate input: check if artist exists
       if (artist) {
         // Display artist info directly within this function
         const artistName = document.createElement("h2");

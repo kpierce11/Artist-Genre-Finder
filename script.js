@@ -1,5 +1,5 @@
-document.addEventListener("DOMContentLoaded", () => {
     let artists = [];
+    
   
     // Fetch artist data from db.json
     fetch("http://localhost:3000/artists")
@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
       document.body.classList.toggle("dark-mode");
     });
   
-    // Event listener for input field to show matching artist suggestions
-    document.getElementById("artistInput").addEventListener("input", () => {
+    // Function for input field to show matching artist suggestions
+    function displayMatchingArtists() {  
       const input = document.getElementById("artistInput").value.trim().toLowerCase();
       const artistInfo = document.getElementById("artistInfo");
       const dropdown = document.getElementById("dropdown");
@@ -97,8 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("artistInput").value = artist.name; // Fill input with artist name
             dropdown.innerHTML = ""; // Clear dropdown after selection
             dropdown.style.display = "none"; // Hide dropdown after selection
-            artistInfo.style.marginTop = "20px";
+            artistInfo.style.marginTop = "20px"; // Reset margin after selection
           });
+
+
   
           dropdown.appendChild(listItem);
         });
@@ -109,7 +111,10 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.style.display = "none"; // Hide dropdown when no matches
         artistInfo.style.marginTop = "20px"; // Reset margin when no matches
       }
-    });
+    }
+  
+    // Event listener for input field to show matching artist suggestions
+    document.getElementById("artistInput").addEventListener("input", displayMatchingArtists);
   
     // Hide dropdown if clicking outside
     document.addEventListener("click", (event) => {
@@ -119,6 +124,4 @@ document.addEventListener("DOMContentLoaded", () => {
         dropdown.style.display = "none"; // Hide dropdown when clicking outside
         document.getElementById("artistInfo").style.marginTop = "20px"; // Reset margin
       }
-    });
-  });
-  
+    });  

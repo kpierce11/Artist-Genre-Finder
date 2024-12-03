@@ -112,6 +112,9 @@
         artistInfo.style.marginTop = "20px"; // Reset margin when no matches
       }
     }
+
+    
+ 
   
     // Event listener for input field to show matching artist suggestions
     document.getElementById("artistInput").addEventListener("input", displayMatchingArtists);
